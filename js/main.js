@@ -4,55 +4,21 @@ let pa = document.querySelector('#pa');
 let myhand = document.querySelector('.myhand');
 let judge= document.querySelector('.judge');
 let enemyhand= document.querySelector('.enemyhand');
+let janken ={1:'グー', 2:'チョキ', 3:'パー'};
+let btn = document.querySelector('.btn');
 
 
-gu.onclick = function () { 
-let r = Math.floor(Math.random()*3+1);
-console.log(r);
 
-myhand.innerHTML ='グー'
-if(r==1){
-  enemyhand.innerHTML ='グー';
-  judge.innerHTML='アイコ'
-}else if(r==2){
-  enemyhand.innerHTML ='チョキ';
-  judge.innerHTML='勝ち'
-}else if(r==3){
-  enemyhand.innerHTML ='パー';
-  judge.innerHTML='負け'
+//btnクラスを持つグー、チョキ、パーどれかをクリックするとクリックした
+//btnのid属性をコンソールに表示したい
+btn.onclick = clickfunc;
+
+function clickfunc(event){  
+  
+let data = event.target.className;
+console.log(data,'data');
+let iddata = event.target.id;
+console.log(iddata,'iddata');
+
+
 }
- }
-
-choki.onclick = function () { 
-let r = Math.floor(Math.random()*3+1);
-console.log(r);
-
-myhand.innerHTML ='チョキ'
-if(r==1){
-  enemyhand.innerHTML ='グ-';
-  judge.innerHTML='負け'
-}else if(r==2){
-  enemyhand.innerHTML ='チョキ';
-  judge.innerHTML='アイコ'
-}else if(r==3){
-  enemyhand.innerHTML ='パー';
-  judge.innerHTML='勝ち'
-}
- }
-
-pa.onclick = function () { 
-let r = Math.floor(Math.random()*3+1);
-console.log(r);
-
-myhand.innerHTML ='パー'
-if(r==1){
-  enemyhand.innerHTML ='グー';
-  judge.innerHTML='勝ち'
-}else if(r==2){
-  enemyhand.innerHTML ='チョキ';
-  judge.innerHTML='負け'
-}else if(r==3){
-  enemyhand.innerHTML ='パー';
-  judge.innerHTML='アイコ'
-}
- }
